@@ -1,0 +1,88 @@
+.wrapper {
+  height: 100%;
+  color: #fff;
+}
+
+.container {
+  margin-top: 5%;
+}
+
+.container__empty-box-empty-box {
+  border: 5px solid #fff;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 50px;
+}
+
+.container__busket-busket {
+  max-width: 80%;
+  margin: 1% auto;
+  border: 5px solid #fff;
+}
+
+.busket__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3%;
+  text-transform: uppercase;
+}
+
+.busket__img {
+  background-color: #fff;
+  height: 10%;
+  width: 10%;
+  border-radius: 4px;
+}
+
+.busket__img img {
+  width: 100%;
+}
+
+.busket__description {
+  margin: 10px;
+  text-align: center;
+}
+
+.busket__delete {
+  text-decoration: none;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 15px 40px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.busket__delete:hover {
+  -webkit-box-shadow: 0px 2px 20px #fff;
+          box-shadow: 0px 2px 20px #fff;
+}
+
+.total-sum {
+  color: #fff;
+  font-size: 50px;
+  margin: 10%;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=busket.component.css.map */

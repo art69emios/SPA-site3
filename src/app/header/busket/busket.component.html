@@ -1,0 +1,21 @@
+<div class="wrapper">
+   <div class="container">
+      <div *ngIf="showEmpty" class="container__empty-box-empty-box">
+         <div class="empty-box__title">Card is empty</div>
+      </div>
+      <div *ngFor="let product of busketAr; index as i " class="container__busket-busket">
+         <div class="busket__block">
+            <div class="busket__id">{{i + 1}}</div>
+            <div class="busket__title">{{product.title}}</div>
+            <div class="busket__img"><img [src]="product.image" alt=""></div>
+            <div class="busket__price">{{product.price | currency}}</div>
+            <div class="busket__delete" (click)="deleteData(i)">Delete</div>
+         </div>
+         <div class="busket__description">{{product.description | uppercase}}</div>
+      </div>
+
+   </div>
+</div>
+<div class="total-sum">
+   <div class="total-sum__block">Total Price: ${{totalSum}}</div>
+</div>

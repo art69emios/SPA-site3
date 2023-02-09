@@ -1,0 +1,17 @@
+<div class="grocery">
+   <div class="grocery__container">
+      <div class="grocery__block" *ngFor="let product of products; let i = index">
+         <div class="grocery__title">{{product.title}}</div>
+         <div class="grocery__img"><img [src]="product.image" alt=""></div>
+         <div class="grocery__price">{{product.price | currency}}</div>    
+         <!-- <div class="grocery__amount-amount">
+            <div class="amount__control">-</div>
+            <div #num class="amount__current">1</div>
+            <div (click)="plusAmount($event)" class="amount__control" >+</div>
+         </div> -->
+         <div *ngIf="!isAuth" class="grocery__add-busket"><a (click)="routerToSingIn()" >{{addBusket}}</a></div>
+         <div *ngIf="isAuth" class="grocery__add-busket"><a (click)="pushItem(product, $event)" >{{addBusket}}</a></div>
+      </div>
+   </div>
+</div>
+         

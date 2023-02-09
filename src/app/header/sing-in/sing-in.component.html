@@ -1,0 +1,24 @@
+<div class="wrapper">
+   <div class="forma">
+      <form (ngSubmit)="OnSubmit(registerForm)" #registerForm="ngForm">
+         <div class="title">Sing In</div>
+         <div class="input-block">
+            <span class="p-float-label">
+               <input autofocus pInputText type="text" #userName (input)="getUserVal(userName)" required>
+               <label for="float-input">Username</label>
+            </span>
+         </div>
+         <div class="input-block">
+            <span class="p-float-label">
+               <input pInputText type="text" #password (input)="getPassVal(password)" required>
+               <label for="float-input">Password</label>
+            </span>
+         </div>
+         <div class="btns">
+            <button routerLink="/register">Register</button>
+            <button  [disabled]="registerForm.invalid" type="submit" >Sing In</button>
+         </div>
+      </form>
+      <p class="err">{{error}}</p>
+   </div>
+</div>

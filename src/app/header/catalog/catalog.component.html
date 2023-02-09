@@ -1,0 +1,28 @@
+<div class="wrapper">
+   <div class="container">
+      <div class="block">
+         <nav class="block__nav">
+            <div class="catalog">
+               <a (click)="showAllCategories()">all</a>
+            </div>
+            <div class="catalog" *ngFor="let categor of category">
+               <a (click)="filtr(categor)">{{categor}}</a>
+            </div>
+            <div class="block__selecting">
+              <div *ngIf="!showFlag" (click)="showHighPrice()" class="sort"><img src="assets/sort.png" alt="">{{showPrice}}</div>
+              <div *ngIf="showFlag" (click)="showHighPrice()" class="sort"><img src="assets/sort.png" alt="">{{showPrice}}</div>
+               <div class="nav__search">
+                  <span class="p-input-icon-left searchInp">
+                     <i class="pi pi-search"></i>
+                     <input (input)="searchItem()" type="text" class="searchInp" pInputText placeholder="Search"
+                        [(ngModel)]="search">
+                  </span>
+               </div>
+            </div>
+         </nav>
+      </div>
+      <app-catalog-item [products]="products" ></app-catalog-item>
+   </div>
+</div>
+<div class="error" *ngIf="flag">Sorry this <span style="text-decoration: underline;">{{search}}</span>  not founded</div>
+<div  *ngIf="isAuth"  class="user">User: {{user}} <br> <button (click)="logOut()" class="btn">Log Out</button></div>

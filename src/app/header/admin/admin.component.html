@@ -1,0 +1,23 @@
+<div class="wrapper">
+   <nav class="nav">
+      <h1> Hello {{name}} </h1>
+      <div>
+         <div *ngIf="!showFlag" (click)="showHighPrice()" class="sort"><img src="assets/sort.png" alt="">{{showPrice}}</div>
+         <div *ngIf="showFlag" (click)="showHighPrice()" class="sort"><img src="assets/sort.png" alt="">{{showPrice}}</div>
+      </div>
+   </nav>
+   <div class="baskets" *ngFor="let dat of data" class="data">
+      <div class="baskets__contant-user">
+         <div class="user__title">
+            <p class="user__name">User: {{dat.login}}</p>
+            <p class="user__date">Date: {{dat.date | date:'medium' }}</p>
+         </div>
+         <div class="user__data" *ngFor="let item of dat.items;" >
+            <div class="user__id">{{item.id}}</div>
+            <div class="user__id">{{item.title}}</div>
+            <div class="user__img"><img [src]="item.image" alt=""></div>
+            <div class="user__id">{{item.price | currency}}</div>
+         </div>
+      </div>
+   </div>
+</div>
